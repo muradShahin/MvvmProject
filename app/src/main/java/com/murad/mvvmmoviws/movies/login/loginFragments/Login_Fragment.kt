@@ -22,11 +22,13 @@ import com.murad.mvvmmoviws.movies.auth.vo.loginRequest
 import com.murad.mvvmmoviws.movies.data.repository.NetworkState
 import com.murad.mvvmmoviws.movies.main.App
 import com.murad.mvvmmoviws.movies.main.HomeActivity
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_login_.view.*
 import javax.inject.Inject
 import javax.inject.Named
 
 
+@AndroidEntryPoint
 class Login_Fragment : Fragment() {
 
     private lateinit var email:String
@@ -40,8 +42,15 @@ class Login_Fragment : Fragment() {
     lateinit var loginApi:LoginApi
     private  val TAG = "Login_Fragment"
 
+
+    private var emailFromSign:String?=null
+    private var passFromSign:String?=null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        emailFromSign=arguments?.getString("email")
+        passFromSign=arguments?.getString("password")
+
 
     }
 
@@ -62,6 +71,7 @@ class Login_Fragment : Fragment() {
     fun init(view: View){
 
 
+        checkIfFromSignUp(view)
         checkForCurrentUser()
 
 
@@ -74,7 +84,6 @@ class Login_Fragment : Fragment() {
                 password=view.password.text.toString()
 
                 val loginRequest = loginRequest(email, password)
-                Toast.makeText(requireActivity(), "${email} ", Toast.LENGTH_SHORT).show()
 
 
                 loginRepository= LoginLocalRepository(loginApi, loginRequest)
@@ -150,6 +159,7 @@ class Login_Fragment : Fragment() {
         val gson=Gson()
         var json=gson.toJson(userInfo)
 
+
         val sharedPreferences=requireActivity().getSharedPreferences(App().USER_SHARED_PREF,Context.MODE_PRIVATE)
         sharedPreferences.edit()
             .putString("userinfo", json)
@@ -187,6 +197,19 @@ class Login_Fragment : Fragment() {
         })[LoginViewModel::class.java]
     }
 
+
+    private fun checkIfFromSignUp(view: View){
+
+
+        if(emailFromSign !=null){
+
+
+
+            view.email.setText(emailFromSign)
+            view.password.setText(passFromSign)
+        }
+
+    }
 
 
 }

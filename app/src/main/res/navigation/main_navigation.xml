@@ -68,4 +68,9 @@
             android:id="@+id/action_search_View_to_single_movie"
             app:destination="@id/single_movie" />
     </fragment>
+    <fragment
+        android:id="@+id/profile_View"
+        android:name="com.murad.mvvmmoviws.profile.Profile_View"
+        android:label="fragment_profile__view"
+        tools:layout="@layout/fragment_profile__view" />
 </navigation>

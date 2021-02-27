@@ -27,7 +27,7 @@ import javax.inject.Inject
 import javax.inject.Named
 
 @AndroidEntryPoint
-class home_fragment : Fragment() {
+class  home_fragment : Fragment() {
     private lateinit var viewModel:PopularViewModel
     private lateinit var pagedListRepository: MoviePagedListRepository
 

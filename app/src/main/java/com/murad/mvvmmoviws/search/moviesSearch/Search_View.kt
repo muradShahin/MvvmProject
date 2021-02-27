@@ -71,6 +71,7 @@ class Search_View : Fragment() {
 
         val dialog=Dialog(requireContext())
         dialog.setContentView(R.layout.old_query_dialog)
+        dialog.setCancelable(false)
 
         dialog.newBtn.setOnClickListener {
 
@@ -97,7 +98,7 @@ class Search_View : Fragment() {
 
         val dialog=Dialog(requireActivity())
         dialog.setContentView(R.layout.search_dialog)
-
+        dialog.setCancelable(false)
         dialog.movieQuery.addTextChangedListener(object :TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
@@ -179,7 +180,6 @@ class Search_View : Fragment() {
         val searchServiceApi=ApiDbClient.getApi()
 
 if(MOVIE_FLAG) {
-    Toast.makeText(requireContext(), searchQuery, Toast.LENGTH_SHORT).show()
     val localRepoistoryForMovies =
         moviesSearchLocalRepository(searchServiceApi, searchQuery)
 

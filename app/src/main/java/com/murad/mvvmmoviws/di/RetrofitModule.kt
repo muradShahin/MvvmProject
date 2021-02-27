@@ -51,9 +51,8 @@ class RetrofitModule {
     @Singleton
     @Provides
     @Named("loginApi")
-    fun provideLoginApi(okkHttpClient: OkHttpClient):LoginApi{
+    fun provideLoginApi():LoginApi{
         return Retrofit.Builder()
-            .client(okkHttpClient)
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .addConverterFactory(GsonConverterFactory.create())
             .baseUrl(App().BASE_URI)

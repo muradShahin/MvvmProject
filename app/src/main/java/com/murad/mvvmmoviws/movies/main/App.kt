@@ -12,7 +12,7 @@ class App :Application() {
     val POSTER_IMG="https://image.tmdb.org/t/p/w342"
 
     //murad api
-    val BASE_URI="http://172.20.10.2:3000/action/"
+    val BASE_URI="http://172.20.10.2:3000/"
 
     val FIRST_PAGE=1
     val PER_PAGE=20

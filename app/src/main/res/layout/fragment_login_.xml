@@ -12,14 +12,14 @@
         android:id="@+id/constraintLayout2"
         android:layout_width="@dimen/_310sdp"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_6sdp"
         android:background="@drawable/login_shape1"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.87">
+        app:layout_constraintTop_toBottomOf="@+id/imageView2">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
@@ -27,7 +27,7 @@
             android:layout_height="39dp"
             android:layout_marginTop="@dimen/_50sdp"
             android:elevation="@dimen/_4sdp"
-            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardCornerRadius="@dimen/_4sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.43"
             app:layout_constraintStart_toStartOf="parent"
@@ -39,7 +39,7 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/edittext_shape"
                 android:ems="10"
-                android:fontFamily="@font/montserrat"
+                android:fontFamily="@font/open_sans_semibold"
                 android:hint="@string/hint_email"
                 android:inputType="textPersonName"
                 android:paddingStart="@dimen/_6sdp"
@@ -53,7 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_14sdp"
             android:elevation="@dimen/_4sdp"
-            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardCornerRadius="@dimen/_4sdp"
             app:layout_constraintEnd_toEndOf="@+id/cardView"
             app:layout_constraintStart_toStartOf="@+id/cardView"
             app:layout_constraintTop_toBottomOf="@+id/cardView">
@@ -64,7 +64,7 @@
                 android:layout_height="@dimen/_35sdp"
                 android:background="@drawable/edittext_shape"
                 android:ems="10"
-                android:fontFamily="@font/montserrat"
+                android:fontFamily="@font/open_sans_semibold"
                 android:hint="@string/pass_hint"
                 android:inputType="textPersonName|textPassword"
                 android:paddingStart="@dimen/_6sdp"
@@ -88,29 +88,27 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="@dimen/_200sdp"
-        android:layout_height="@dimen/_80sdp"
-        android:layout_marginTop="@dimen/_20sdp"
-        android:src="@drawable/ic_video_camera"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/signUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/_20sdp"
-        android:fontFamily="@font/montserrat"
+        android:fontFamily="@font/open_sans_semibold"
         android:text="@string/signUp"
         android:textColor="@android:color/white"
         android:textSize="@dimen/_12sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:src="@drawable/ic_video_camera"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/constraintLayout2"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

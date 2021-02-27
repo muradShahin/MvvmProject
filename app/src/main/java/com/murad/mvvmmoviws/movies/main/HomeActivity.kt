@@ -35,7 +35,7 @@ class HomeActivity : AppCompatActivity() {
 
         val appBarConfig= AppBarConfiguration(
             setOf(
-                R.id.home_fragment,R.id.tv_Shows_Fragment,R.id.search_View,R.id.profile_fragment
+                R.id.home_fragment,R.id.tv_Shows_Fragment,R.id.search_View,R.id.profile_View
             )
         )
 

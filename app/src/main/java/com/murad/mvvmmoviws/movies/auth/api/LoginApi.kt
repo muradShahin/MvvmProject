@@ -12,9 +12,9 @@ interface LoginApi {
 
 
 
-    @POST("login")
+    @POST("auth/login")
     fun login(@Body body:loginRequest):Observable<UserInfo>
 
-    @POST("addUser")
+    @POST("auth/addUser")
     fun createAccount(@Body body: SignUpRequest):Observable<signUpResult>
 }

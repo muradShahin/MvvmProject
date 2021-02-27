@@ -15,7 +15,7 @@
         android:icon="@drawable/search"
         android:title="@string/searchBtn" />
     <item
-        android:id="@+id/profile_fragment"
+        android:id="@+id/profile_View"
         android:icon="@drawable/profile"
         android:title="List" />
 </menu>

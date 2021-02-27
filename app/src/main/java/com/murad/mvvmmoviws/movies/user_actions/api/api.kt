@@ -7,6 +7,6 @@ import retrofit2.http.POST
 
 interface api {
 
-    @POST("addToFav")
+    @POST("action/addToFav")
     fun addToList(@Body body:UserList):Observable<Any>
 }

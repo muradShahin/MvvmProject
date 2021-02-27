@@ -3,7 +3,9 @@ package com.murad.mvvmmoviws.movies.login
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.murad.mvvmmoviws.R
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class Login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

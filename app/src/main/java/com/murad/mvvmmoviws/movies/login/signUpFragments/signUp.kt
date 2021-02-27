@@ -8,14 +8,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.observe
+import androidx.navigation.findNavController
 import com.murad.mvvmmoviws.R
 import com.murad.mvvmmoviws.movies.auth.api.LoginApi
 import com.murad.mvvmmoviws.movies.auth.vo.SignUpRequest
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_sign_up.view.*
 import javax.inject.Inject
 import javax.inject.Named
 
 
+@AndroidEntryPoint
 class signUp : Fragment() {
 
 
@@ -68,22 +71,26 @@ class signUp : Fragment() {
             viewModel= SignUpViewModel(signUpLocalRepository)
 
 
-            viewModel.signUpResponse.observe(requireActivity(), {
+            viewModel.signUpResponse.observe(requireActivity()) {
 
                 Log.d(TAG, "init: ${it.result}")
                 if(it.result =="1"){
+
+
                     Toast.makeText(requireActivity(),"Created Successfully !",Toast.LENGTH_SHORT).show()
-                    view.email.text.clear()
-                    view.password.text.clear()
-                    view.nickname.text.clear()
-                    view.gender.text.clear()
-                    view.date.text.clear()
+
+
+
+
+
+                 getView()?.findNavController()?.navigate(signUpDirections.actionSignUpToLoginFragment(view.email.text.toString(),view.password.text.toString()))
+
                 }else{
                     Toast.makeText(requireActivity(),"Failed !",Toast.LENGTH_SHORT).show()
 
                 }
 
-            })
+            }
 
 
             viewModel.networkStateResponse.observe(requireActivity(),{
