@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">MvvmMoviws</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="popular_movies">Popular Movies</string>
+    <string name="title_activity_test">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="upComing">Up Coming</string>
+    <string name="trending">Trending</string>
+    <string name="loginStr">Hello</string>
+    <string name="emailStr">Email</string>
+    <string name="hint_email">email@gmail.com</string>
+    <string name="pass_hint">password</string>
+    <string name="PasswordStr">Password</string>
+    <string name="signUp">Don\'t have an Account ? Sign Up</string>
+    <string name="login_btn">Login</string>
+    <string name="createAcc">"Create An Account "</string>
+    <string name="addToList">Add To My List</string>
+    <string name="popular_tv_shows">Popular Tv Shows</string>
+    <string name="seasonsStr">Seasons :</string>
+    <string name="typeStr">Type</string>
+    <string name="searchForMovie">Search For A movie</string>
+    <string name="searchForTv">Search For A Tv Show</string>
+    <string name="searchBtn">Search</string>
+    <string name="newSearch">New Search</string>
+    <string name="oldSearch">Stay with the old search</string>
+    <string name="newSearchDialog">Do you want to start a new Search ? or stay with the old one ?</string>
+</resources>

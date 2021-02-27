@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/home_fragment"
+
+
+    >
+
+    <fragment
+        android:id="@+id/home_fragment"
+        tools:layout="@layout/home_fragment"
+        android:name="com.murad.mvvmmoviws.movies.popular_movies.home_fragment"
+        android:label="home_fragment" >
+        <action
+            android:id="@+id/action_home_fragment_to_single_movie"
+            app:destination="@id/single_movie" />
+    </fragment>
+    <fragment
+        android:id="@+id/single_movie"
+        android:name="com.murad.mvvmmoviws.movies.single_movie.Single_movie"
+        tools:layout="@layout/activity_single_movie"
+        android:label="Single_movie" >
+        <argument
+            android:name="movie_id"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_single_movie_to_trailer_Activity"
+            app:destination="@id/trailer_Activity" />
+    </fragment>
+    <fragment
+        android:id="@+id/trailer_Activity"
+        android:name="com.murad.mvvmmoviws.movies.single_movie.trailers.Trailer_Activity"
+        android:label="activity_trailer_"
+        tools:layout="@layout/activity_trailer_" >
+        <argument
+            android:name="movie_id"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/tv_Shows_Fragment"
+        android:name="com.murad.mvvmmoviws.tv.tv_view.popularShows.Tv_Shows_Fragment"
+        android:label="fragment_tv__shows_"
+        tools:layout="@layout/fragment_tv__shows_" >
+        <action
+            android:id="@+id/action_tv_Shows_Fragment_to_tv_Show_Details"
+            app:destination="@id/tv_Show_Details" />
+    </fragment>
+    <fragment
+        android:id="@+id/tv_Show_Details"
+        android:name="com.murad.mvvmmoviws.tv.tv_view.tv_details.Tv_Show_Details"
+        android:label="fragment_tv__show__details"
+        tools:layout="@layout/tv_details_show" >
+        <argument
+            android:name="show_id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_tv_Show_Details_self"
+            app:destination="@id/tv_Show_Details" />
+    </fragment>
+    <fragment
+        android:id="@+id/search_View"
+        android:name="com.murad.mvvmmoviws.search.moviesSearch.Search_View"
+        android:label="fragment_search__view"
+        tools:layout="@layout/fragment_search__view" >
+        <action
+            android:id="@+id/action_search_View_to_single_movie"
+            app:destination="@id/single_movie" />
+    </fragment>
+</navigation>
