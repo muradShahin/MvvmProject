@@ -10,8 +10,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.murad.mvvmmoviws.R
-import com.murad.mvvmmoviws.movies.data.repository.NetworkState
-import com.murad.mvvmmoviws.movies.data.vo.Result
+import com.murad.mvvmmoviws.data.repository.NetworkState
+import com.murad.mvvmmoviws.data.vo.Result
 import com.murad.mvvmmoviws.movies.main.App
 import kotlinx.android.synthetic.main.movie_row.view.*
 import kotlinx.android.synthetic.main.movie_row.view.movie_title

@@ -2,7 +2,7 @@ package com.murad.mvvmmoviws.tv.data.repository
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.murad.mvvmmoviws.movies.data.repository.NetworkState
+import com.murad.mvvmmoviws.data.repository.NetworkState
 import com.murad.mvvmmoviws.tv.data.api.tvApi
 import com.murad.mvvmmoviws.tv.data.vo.Tv_show
 import io.reactivex.android.schedulers.AndroidSchedulers

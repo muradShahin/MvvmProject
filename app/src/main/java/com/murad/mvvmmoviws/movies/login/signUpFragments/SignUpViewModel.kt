@@ -3,7 +3,7 @@ package com.murad.mvvmmoviws.movies.login.signUpFragments
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.murad.mvvmmoviws.movies.auth.vo.signUpResult
-import com.murad.mvvmmoviws.movies.data.repository.NetworkState
+import com.murad.mvvmmoviws.data.repository.NetworkState
 
 class SignUpViewModel(val localRepository:SignUpLocalRepository):ViewModel() {
 

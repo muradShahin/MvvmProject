@@ -3,8 +3,8 @@ package com.murad.mvvmmoviws.movies.popular_movies.upcoming
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.paging.PagedList
-import com.murad.mvvmmoviws.movies.data.repository.NetworkState
-import com.murad.mvvmmoviws.movies.data.vo.ResultX
+import com.murad.mvvmmoviws.data.repository.NetworkState
+import com.murad.mvvmmoviws.data.vo.ResultX
 
 class UpComingViewModel(val upComingPagedListRepository: UpComingPagedListRepository):ViewModel() {
 

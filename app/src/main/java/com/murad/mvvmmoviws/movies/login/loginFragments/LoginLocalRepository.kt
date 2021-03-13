@@ -5,8 +5,8 @@ import androidx.lifecycle.LiveData
 import com.murad.mvvmmoviws.movies.auth.api.LoginApi
 import com.murad.mvvmmoviws.movies.auth.vo.UserInfo
 import com.murad.mvvmmoviws.movies.auth.vo.loginRequest
-import com.murad.mvvmmoviws.movies.data.repository.LoginRepository
-import com.murad.mvvmmoviws.movies.data.repository.NetworkState
+import com.murad.mvvmmoviws.data.repository.LoginRepository
+import com.murad.mvvmmoviws.data.repository.NetworkState
 
 class LoginLocalRepository(val loginApi:LoginApi,val loginRequest: loginRequest) {
 

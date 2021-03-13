@@ -14,9 +14,11 @@ import com.bumptech.glide.Glide
 import com.google.gson.Gson
 import com.murad.mvvmmoviws.R
 import com.murad.mvvmmoviws.movies.auth.vo.UserInfoX
-import com.murad.mvvmmoviws.movies.data.api.MovieDbInterface
-import com.murad.mvvmmoviws.movies.data.repository.NetworkState
-import com.murad.mvvmmoviws.movies.data.vo.movie_details
+import com.murad.mvvmmoviws.data.api.MovieDbInterface
+import com.murad.mvvmmoviws.data.repository.NetworkState
+import com.murad.mvvmmoviws.data.vo.movie_details
+import com.murad.mvvmmoviws.localDb.DaoDb
+import com.murad.mvvmmoviws.localDb.entites.Fav
 import com.murad.mvvmmoviws.movies.main.App
 import com.murad.mvvmmoviws.movies.user_actions.api.api
 import com.murad.mvvmmoviws.movies.user_actions.vo.UserList
@@ -33,12 +35,17 @@ class Single_movie : Fragment() {
     private lateinit var singleMovieViewModel: SingleMovieViewModel
     private lateinit var movieDetailsRepository: MovieDetailsRepository
 
+    private lateinit var movieDetails: movie_details
+
     @Inject
     @Named("MovieDbInterface")
     lateinit var apiService:MovieDbInterface
 
     @Inject
     lateinit var apiListService:api
+
+    @Inject
+    lateinit var daoDb:DaoDb
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -63,18 +70,24 @@ class Single_movie : Fragment() {
         Log.d(TAG, "onCreate: ${movieId}")
 
 
+        //fav instance
+
+
 
        //  apiService=TheMovieDbClient.getClient()
         movieDetailsRepository= MovieDetailsRepository(apiService,apiListService)
 
         singleMovieViewModel=getViewModel(movieId!!,userlistRequest)
 
-        singleMovieViewModel.movieDetails.observe(requireActivity(),
-            {
-                Log.d(TAG, "onCreateView: ${it}")
-                if (it != null)
-                    bindUi(it,view)
-            })
+        singleMovieViewModel.movieDetails.observe(requireActivity()
+        ) {
+            Log.d(TAG, "onCreateView: ${it}")
+            if (it != null) {
+                movieDetails=it
+                bindUi(it, view)
+
+            }
+        }
 
         singleMovieViewModel.networkState.observe(requireActivity(), Observer {
             view.progress_bar.visibility=if(it== NetworkState.LOADING) View.VISIBLE else View.GONE
@@ -89,16 +102,26 @@ class Single_movie : Fragment() {
 
         view.addToMyList.setOnClickListener {
 
+            if(movieDetails !=null) {
+                val viewModel = getDbViewModel(
+                    LocalDbRepository(
+                    Fav(movieId,movieDetails.poster_path,movieDetails.title),
+                        daoDb
+                    )
+                )
 
-            singleMovieViewModel.addToUserList()
+                viewModel.addShowToDb()
 
-            singleMovieViewModel.movieAdded.observe(requireActivity(),{
-                if(it)
-                     Toast.makeText(requireContext(),"Added To Your List",Toast.LENGTH_SHORT).show()
-                else
-                    Toast.makeText(requireContext(),"Something Went Wrong",Toast.LENGTH_SHORT).show()
+                viewModel.addResult.observe(requireActivity()) {
 
-            })
+                    Toast.makeText(requireContext(),"Added Successfully !",Toast.LENGTH_SHORT).show()
+                    view.addToMyList.isEnabled=false
+                    view.addToMyList.setBackgroundResource(R.color.colorPrimaryDark)
+
+                }
+
+
+            }
 
 
         }
@@ -133,7 +156,7 @@ class Single_movie : Fragment() {
     }
 
     //this method to pass data to ViewModel, we can not send data to view model using normal providers method so we had to use ViewModelProvider.Factory
-    fun getViewModel(movieId: Int, userlistRequest: UserList): SingleMovieViewModel {
+    private fun getViewModel(movieId: Int, userlistRequest: UserList): SingleMovieViewModel {
 
 
         return ViewModelProviders.of(this,object :ViewModelProvider.Factory{
@@ -145,5 +168,16 @@ class Single_movie : Fragment() {
 
         })[SingleMovieViewModel::class.java] // to cast from viewModelProvider to SingleViewModel
 
+    }
+
+    private fun getDbViewModel(localDbRepo:LocalDbRepository) : DataBaseViewModel{
+        return ViewModelProviders.of(this,object : ViewModelProvider.Factory{
+            override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+
+                return DataBaseViewModel(localDbRepo) as T
+            }
+
+
+        })[DataBaseViewModel::class.java]
     }
 }

@@ -12,8 +12,8 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.murad.mvvmmoviws.R
-import com.murad.mvvmmoviws.movies.data.api.MovieDbInterface
-import com.murad.mvvmmoviws.movies.data.repository.NetworkState
+import com.murad.mvvmmoviws.data.api.MovieDbInterface
+import com.murad.mvvmmoviws.data.repository.NetworkState
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_trailer_.*
 import kotlinx.android.synthetic.main.activity_trailer_.view.*

@@ -12,8 +12,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.murad.mvvmmoviws.R
 import com.murad.mvvmmoviws.movies.popular_movies.home_fragment
-import com.murad.mvvmmoviws.movies.data.repository.NetworkState
-import com.murad.mvvmmoviws.movies.data.vo.ResultX
+import com.murad.mvvmmoviws.data.repository.NetworkState
+import com.murad.mvvmmoviws.data.vo.ResultX
 import com.murad.mvvmmoviws.movies.main.App
 import kotlinx.android.synthetic.main.network_state.view.*
 import kotlinx.android.synthetic.main.up_coming_movie_row.view.*

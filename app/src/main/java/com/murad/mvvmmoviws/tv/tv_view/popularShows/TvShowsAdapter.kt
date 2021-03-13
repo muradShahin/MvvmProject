@@ -4,16 +4,14 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.murad.mvvmmoviws.R
-import com.murad.mvvmmoviws.movies.data.repository.NetworkState
+import com.murad.mvvmmoviws.data.repository.NetworkState
 import com.murad.mvvmmoviws.movies.main.App
 import com.murad.mvvmmoviws.tv.data.vo.Result
 import kotlinx.android.synthetic.main.movie_row.view.*

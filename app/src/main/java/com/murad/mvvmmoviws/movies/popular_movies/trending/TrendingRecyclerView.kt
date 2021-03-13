@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.murad.mvvmmoviws.R
 import com.murad.mvvmmoviws.movies.popular_movies.home_fragment
-import com.murad.mvvmmoviws.movies.data.vo.ResultXX
+import com.murad.mvvmmoviws.data.vo.ResultXX
 import com.murad.mvvmmoviws.movies.main.App
 import kotlinx.android.synthetic.main.trending_row.view.*
 

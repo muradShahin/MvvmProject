@@ -1,6 +1,7 @@
 package com.murad.mvvmmoviws.movies.popular_movies
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,15 +13,15 @@ import com.azoft.carousellayoutmanager.CarouselLayoutManager
 import com.azoft.carousellayoutmanager.CarouselZoomPostLayoutListener
 import com.azoft.carousellayoutmanager.CenterScrollListener
 import com.murad.mvvmmoviws.R
-import com.murad.mvvmmoviws.movies.data.api.MovieDbInterface
+import com.murad.mvvmmoviws.data.api.MovieDbInterface
 import com.murad.mvvmmoviws.movies.popular_movies.trending.TrendingMoviesRepository
 import com.murad.mvvmmoviws.movies.popular_movies.trending.TrendingRecyclerView
 import com.murad.mvvmmoviws.movies.popular_movies.trending.TrendingViewModel
 import com.murad.mvvmmoviws.movies.popular_movies.upcoming.UpComingPagedListAdapter
 import com.murad.mvvmmoviws.movies.popular_movies.upcoming.UpComingPagedListRepository
 import com.murad.mvvmmoviws.movies.popular_movies.upcoming.UpComingViewModel
-import com.murad.mvvmmoviws.movies.data.repository.NetworkState
-import com.murad.mvvmmoviws.movies.data.vo.ResultXX
+import com.murad.mvvmmoviws.data.repository.NetworkState
+import com.murad.mvvmmoviws.data.vo.ResultXX
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.home_fragment.view.*
 import javax.inject.Inject
@@ -41,6 +42,7 @@ class  home_fragment : Fragment() {
 
     private  val TAG = "home_fragment"
 
+    private var randomNumber:Int =0
 
     @Inject
     @Named("MovieDbInterface")
@@ -69,21 +71,15 @@ class  home_fragment : Fragment() {
 
 
 
+
+
+
+
+
         val movieAdapter=MoviePagedListAdapter(requireContext(),this)
         upComingPagedListAdapter= UpComingPagedListAdapter(requireContext(),this)
 
 
-//        var gridLayout=GridLayoutManager(requireContext(),3)
-//        gridLayout.spanSizeLookup=object : GridLayoutManager.SpanSizeLookup() {
-//            override fun getSpanSize(position: Int): Int {
-//                var viewType=movieAdapter.getItemViewType(position)
-//                if(viewType==movieAdapter.MOVIE_VIEW_TYPE)
-//                    return 1
-//                else
-//                    return 3
-//            }
-//
-//        }
 
 
         val layoutManagerCus=CarouselLayoutManager(CarouselLayoutManager.HORIZONTAL)
@@ -96,8 +92,15 @@ class  home_fragment : Fragment() {
         })
 
 
-        var randomNumber=(4..20).random()
-        layoutManagerCus.scrollToPosition(randomNumber)
+       // var randomNumber=(4..20).random()
+
+        viewModel.getRandomNumber().observe(requireActivity()) {
+
+            Log.d(TAG, "onCreateView:$it ")
+            randomNumber=it
+            layoutManagerCus.scrollToPosition(it)
+
+        }
         view.rec_popular.apply {
             layoutManager=layoutManagerCus
             setHasFixedSize(false)
@@ -223,4 +226,27 @@ class  home_fragment : Fragment() {
     }
 
 
+    override fun onStop() {
+        Log.d(TAG, "onStop: ")
+
+        super.onStop()
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        Log.d(TAG, "onCreate: ")
+
+        super.onCreate(savedInstanceState)
+    }
+
+    override fun onResume() {
+        Log.d(TAG, "onResume: ")
+
+        super.onResume()
+    }
+
+    override fun onDestroy() {
+        Log.d(TAG, "onDestroy: ")
+
+        super.onDestroy()
+    }
 }

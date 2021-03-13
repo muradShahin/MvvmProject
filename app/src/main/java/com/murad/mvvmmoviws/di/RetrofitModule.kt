@@ -1,7 +1,7 @@
 package com.murad.mvvmmoviws.di
 
 import com.murad.mvvmmoviws.movies.auth.api.LoginApi
-import com.murad.mvvmmoviws.movies.data.api.MovieDbInterface
+import com.murad.mvvmmoviws.data.api.MovieDbInterface
 import com.murad.mvvmmoviws.movies.main.App
 import com.murad.mvvmmoviws.tv.data.api.tvApi
 import dagger.Module

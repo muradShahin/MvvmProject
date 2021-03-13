@@ -2,8 +2,9 @@ package com.murad.mvvmmoviws.movies.single_movie
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import com.murad.mvvmmoviws.movies.data.repository.NetworkState
-import com.murad.mvvmmoviws.movies.data.vo.movie_details
+import com.murad.mvvmmoviws.data.repository.NetworkState
+import com.murad.mvvmmoviws.data.vo.movie_details
+import com.murad.mvvmmoviws.localDb.entites.Fav
 import com.murad.mvvmmoviws.movies.user_actions.vo.UserList
 import io.reactivex.disposables.CompositeDisposable
 
@@ -21,18 +22,11 @@ class SingleMovieViewModel(private val movieRepository: MovieDetailsRepository,p
         movieRepository.getNetworkState()
     }
 
-    val movieAdded:LiveData<Boolean> by lazy {
-        movieRepository.getAddToListResult()
-    }
 
 
     override fun onCleared() {
         super.onCleared()
         compositeDisposable.dispose()
-    }
-
-     fun addToUserList(){
-        movieRepository.addMovieToList(userListRequest)
     }
 
 

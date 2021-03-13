@@ -4,11 +4,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
-import com.murad.mvvmmoviws.movies.data.api.MovieDbInterface
-import com.murad.mvvmmoviws.movies.data.repository.MovieDataSourceFactory
-import com.murad.mvvmmoviws.movies.data.repository.MoviesDataSource
-import com.murad.mvvmmoviws.movies.data.repository.NetworkState
-import com.murad.mvvmmoviws.movies.data.vo.Result
+import com.murad.mvvmmoviws.data.api.MovieDbInterface
+import com.murad.mvvmmoviws.data.repository.MovieDataSourceFactory
+import com.murad.mvvmmoviws.data.repository.MoviesDataSource
+import com.murad.mvvmmoviws.data.repository.NetworkState
+import com.murad.mvvmmoviws.data.vo.Result
 import com.murad.mvvmmoviws.movies.main.App
 
 class MoviePagedListRepository(val apiService:MovieDbInterface) {

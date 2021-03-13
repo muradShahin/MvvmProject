@@ -4,15 +4,13 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.paging.PageKeyedDataSource
-import com.murad.mvvmmoviws.movies.data.repository.NetworkState
-import com.murad.mvvmmoviws.movies.data.vo.Result
+import com.murad.mvvmmoviws.data.repository.NetworkState
+import com.murad.mvvmmoviws.data.vo.Result
 import com.murad.mvvmmoviws.movies.main.App
 import com.murad.mvvmmoviws.search.api.searchServices
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import retrofit2.await
 import retrofit2.awaitResponse
 
 class MoviesSearchMainRepository(val searchServices: searchServices,val query:String) :PageKeyedDataSource<Int, Result>() {

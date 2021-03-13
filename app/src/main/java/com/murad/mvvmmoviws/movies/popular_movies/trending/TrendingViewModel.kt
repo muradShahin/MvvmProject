@@ -2,8 +2,8 @@ package com.murad.mvvmmoviws.movies.popular_movies.trending
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import com.murad.mvvmmoviws.movies.data.repository.NetworkState
-import com.murad.mvvmmoviws.movies.data.vo.Trending_Movies
+import com.murad.mvvmmoviws.data.repository.NetworkState
+import com.murad.mvvmmoviws.data.vo.Trending_Movies
 
 class TrendingViewModel(val trendingMoviesRepository: TrendingMoviesRepository):ViewModel() {
 

@@ -40,33 +40,8 @@
                 android:background="@drawable/edittext_shape"
                 android:ems="10"
                 android:fontFamily="@font/open_sans_semibold"
-                android:hint="@string/hint_email"
+                android:hint="Your Name"
                 android:inputType="textPersonName"
-                android:paddingStart="@dimen/_6sdp"
-                android:paddingEnd="@dimen/_3sdp"
-                android:textSize="@dimen/_12sdp" />
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_14sdp"
-            android:elevation="@dimen/_4sdp"
-            app:cardCornerRadius="@dimen/_4sdp"
-            app:layout_constraintEnd_toEndOf="@+id/cardView"
-            app:layout_constraintStart_toStartOf="@+id/cardView"
-            app:layout_constraintTop_toBottomOf="@+id/cardView">
-
-            <EditText
-                android:id="@+id/password"
-                android:layout_width="@dimen/_180sdp"
-                android:layout_height="@dimen/_35sdp"
-                android:background="@drawable/edittext_shape"
-                android:ems="10"
-                android:fontFamily="@font/open_sans_semibold"
-                android:hint="@string/pass_hint"
-                android:inputType="textPersonName|textPassword"
                 android:paddingStart="@dimen/_6sdp"
                 android:paddingEnd="@dimen/_3sdp"
                 android:textSize="@dimen/_12sdp" />
@@ -76,30 +51,17 @@
             android:id="@+id/login"
             android:layout_width="@dimen/_180sdp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="88dp"
             android:background="@drawable/button_shape1"
             android:fontFamily="@font/montserrat"
-            android:text="@string/login_btn"
+            android:text="Enter"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
-            app:layout_constraintEnd_toEndOf="@+id/cardView2"
-            app:layout_constraintStart_toStartOf="@+id/cardView2"
-            app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+            app:layout_constraintEnd_toEndOf="@+id/cardView"
+            app:layout_constraintStart_toStartOf="@+id/cardView"
+            app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <TextView
-        android:id="@+id/signUp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/_20sdp"
-        android:fontFamily="@font/open_sans_semibold"
-        android:text="@string/signUp"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/_12sdp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView2"

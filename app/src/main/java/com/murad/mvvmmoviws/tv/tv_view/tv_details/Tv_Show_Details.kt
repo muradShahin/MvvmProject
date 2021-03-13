@@ -14,7 +14,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.murad.mvvmmoviws.R
-import com.murad.mvvmmoviws.movies.data.repository.NetworkState
+import com.murad.mvvmmoviws.data.repository.NetworkState
 import com.murad.mvvmmoviws.movies.main.App
 import com.murad.mvvmmoviws.tv.data.api.tvApi
 import com.murad.mvvmmoviws.tv.data.repository.Tv_Details_Repo_Main

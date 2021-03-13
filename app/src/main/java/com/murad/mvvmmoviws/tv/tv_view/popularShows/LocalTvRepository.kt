@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
-import com.murad.mvvmmoviws.movies.data.repository.NetworkState
+import com.murad.mvvmmoviws.data.repository.NetworkState
 import com.murad.mvvmmoviws.movies.main.App
 import com.murad.mvvmmoviws.tv.data.api.tvApi
 import com.murad.mvvmmoviws.tv.data.repository.TvMainRepository

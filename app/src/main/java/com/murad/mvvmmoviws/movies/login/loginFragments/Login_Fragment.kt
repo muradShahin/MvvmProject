@@ -19,10 +19,11 @@ import com.murad.mvvmmoviws.R
 import com.murad.mvvmmoviws.movies.auth.api.LoginApi
 import com.murad.mvvmmoviws.movies.auth.vo.UserInfoX
 import com.murad.mvvmmoviws.movies.auth.vo.loginRequest
-import com.murad.mvvmmoviws.movies.data.repository.NetworkState
+import com.murad.mvvmmoviws.data.repository.NetworkState
 import com.murad.mvvmmoviws.movies.main.App
 import com.murad.mvvmmoviws.movies.main.HomeActivity
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.fragment_login_.*
 import kotlinx.android.synthetic.main.fragment_login_.view.*
 import javax.inject.Inject
 import javax.inject.Named
@@ -31,8 +32,6 @@ import javax.inject.Named
 @AndroidEntryPoint
 class Login_Fragment : Fragment() {
 
-    private lateinit var email:String
-    private lateinit var password:String
 
     private lateinit var loginRepository: LoginLocalRepository
     private lateinit var viewModel: LoginViewModel
@@ -71,65 +70,30 @@ class Login_Fragment : Fragment() {
     fun init(view: View){
 
 
-        checkIfFromSignUp(view)
-        checkForCurrentUser()
 
 
         view.login.setOnClickListener {
 
+            val userInfo =UserInfoX(
+                0             ,
+                "WWW",
+                "2020",
+                "2020",
+                email.text.toString(),
+                ArrayList<Any>(),
+                "malee",
+                email.text.toString(),
+                "11",
+                "22"
 
-            if(validateEmail(view)){
+            )
 
-                email=view.email.text.toString()
-                password=view.password.text.toString()
-
-                val loginRequest = loginRequest(email, password)
-
-
-                loginRepository= LoginLocalRepository(loginApi, loginRequest)
-
-
-                viewModel=LoginViewModel(loginRepository)
-
-
-
-                viewModel._userInfoResponse.observe(requireActivity(), {
-
-                    if (it.userInfo != null) {
-
-                        saveCurrentUser(it.userInfo)
-                        
-                    } else {
-                        Toast.makeText(requireContext(), "incorrect creditals", Toast.LENGTH_SHORT)
-                            .show()
-                    }
-
-                })
-
-                viewModel.getNetWorkState.observe(requireActivity(), {
-
-                    if (it == NetworkState.LOADING) {
-
-                    } else {
-
-                    }
-                })
-
-
-
-            }else{
-                Toast.makeText(requireActivity(), "Incorrect credintals ", Toast.LENGTH_SHORT).show()
-            }
-
+            saveCurrentUser(userInfo)
 
         }
 
-        view.signUp.setOnClickListener {
-
-            view.findNavController().navigate(Login_FragmentDirections.actionLoginFragmentToSignUp())
 
 
-        }
 
 
 
@@ -171,45 +135,20 @@ class Login_Fragment : Fragment() {
         startActivity(intent)
         requireActivity().finish()
 
-        //to retrive
-//        val gson = Gson()
-//        val json: String = mPrefs.getString("MyObject", "")
-//        val obj: MyObject = gson.fromJson(json, MyObject::class.java)
-    }
-
-    private fun validateEmail(view: View):Boolean{
-
-        return  view.email.text.toString().isNotEmpty()
-                   && view.email.text.toString().contains("@")
-                && view.email.text.toString().contains(".com")
 
     }
 
-    //this method caused an error in login because when data is incorrect it takes the old data over and over
-    private fun getViewModel():LoginViewModel{
-        return ViewModelProviders.of(this, object : ViewModelProvider.Factory {
-            override fun <T : ViewModel?> create(modelClass: Class<T>): T {
 
-                return LoginViewModel(loginRepository) as T
-            }
-
-
-        })[LoginViewModel::class.java]
+    override fun onResume() {
+        checkForCurrentUser()
+        super.onResume()
     }
 
 
-    private fun checkIfFromSignUp(view: View){
-
-
-        if(emailFromSign !=null){
 
 
 
-            view.email.setText(emailFromSign)
-            view.password.setText(passFromSign)
-        }
 
-    }
 
 
 }

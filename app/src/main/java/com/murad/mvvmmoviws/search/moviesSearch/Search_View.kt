@@ -2,7 +2,6 @@ package com.murad.mvvmmoviws.search.moviesSearch
 
 import android.app.Dialog
 import android.content.Context.MODE_PRIVATE
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -11,7 +10,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
@@ -19,7 +17,7 @@ import androidx.lifecycle.observe
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.murad.mvvmmoviws.R
-import com.murad.mvvmmoviws.movies.data.repository.NetworkState
+import com.murad.mvvmmoviws.data.repository.NetworkState
 import com.murad.mvvmmoviws.search.api.ApiDbClient
 import com.murad.mvvmmoviws.search.data.moviesSearchLocalRepository
 import kotlinx.android.synthetic.main.fragment_search__view.view.*

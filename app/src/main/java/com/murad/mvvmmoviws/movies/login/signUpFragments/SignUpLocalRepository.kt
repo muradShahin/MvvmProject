@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import com.murad.mvvmmoviws.movies.auth.api.LoginApi
 import com.murad.mvvmmoviws.movies.auth.vo.SignUpRequest
 import com.murad.mvvmmoviws.movies.auth.vo.signUpResult
-import com.murad.mvvmmoviws.movies.data.repository.NetworkState
-import com.murad.mvvmmoviws.movies.data.repository.SignUpRepository
+import com.murad.mvvmmoviws.data.repository.NetworkState
+import com.murad.mvvmmoviws.data.repository.SignUpRepository
 
 class SignUpLocalRepository(val apiService:LoginApi,val signUpRequest:SignUpRequest) {
 

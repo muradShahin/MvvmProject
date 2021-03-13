@@ -1,9 +1,8 @@
 package com.murad.mvvmmoviws.search.api
 
-import com.murad.mvvmmoviws.movies.data.vo.Popular_Movies
+import com.murad.mvvmmoviws.data.vo.Popular_Movies
 import com.murad.mvvmmoviws.tv.data.vo.TvShowResponse
 import retrofit2.Call
-import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
 

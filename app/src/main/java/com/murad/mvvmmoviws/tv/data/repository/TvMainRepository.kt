@@ -1,11 +1,9 @@
 package com.murad.mvvmmoviws.tv.data.repository
 
-import android.app.usage.NetworkStats
 import android.util.Log
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.paging.PageKeyedDataSource
-import com.murad.mvvmmoviws.movies.data.repository.NetworkState
+import com.murad.mvvmmoviws.data.repository.NetworkState
 import com.murad.mvvmmoviws.movies.main.App
 import com.murad.mvvmmoviws.tv.data.api.tvApi
 import com.murad.mvvmmoviws.tv.data.vo.Result

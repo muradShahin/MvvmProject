@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.murad.mvvmmoviws.movies.auth.vo.UserInfo
-import com.murad.mvvmmoviws.movies.data.repository.NetworkState
+import com.murad.mvvmmoviws.data.repository.NetworkState
 
 class LoginViewModel(val localLoginRepository: LoginLocalRepository):ViewModel() {
 

@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.murad.mvvmmoviws.R
-import com.murad.mvvmmoviws.movies.data.vo.Trailer
+import com.murad.mvvmmoviws.data.vo.Trailer
 import kotlinx.android.synthetic.main.trailers_row.view.*
 
 class TrailerAdapter(val trailersActivity: Trailer_Activity,val trailers:List<Trailer>):RecyclerView.Adapter<TrailerAdapter.ViewHolder>() {

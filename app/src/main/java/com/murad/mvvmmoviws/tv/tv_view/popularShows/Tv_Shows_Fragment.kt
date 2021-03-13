@@ -12,7 +12,7 @@ import androidx.lifecycle.observe
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.murad.mvvmmoviws.R
-import com.murad.mvvmmoviws.movies.data.repository.NetworkState
+import com.murad.mvvmmoviws.data.repository.NetworkState
 import com.murad.mvvmmoviws.tv.data.api.tvApi
 import dagger.hilt.android.AndroidEntryPoint
 import io.reactivex.disposables.CompositeDisposable

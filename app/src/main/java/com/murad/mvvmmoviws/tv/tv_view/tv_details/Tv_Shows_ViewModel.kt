@@ -2,7 +2,7 @@ package com.murad.mvvmmoviws.tv.tv_view.tv_details
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import com.murad.mvvmmoviws.movies.data.repository.NetworkState
+import com.murad.mvvmmoviws.data.repository.NetworkState
 import com.murad.mvvmmoviws.tv.data.vo.Tv_show
 
 class Tv_Shows_ViewModel(val LocalRepo:LocalTvDetailsRepository):ViewModel() {

@@ -2,10 +2,10 @@ package com.murad.mvvmmoviws.movies.popular_movies.trending
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.murad.mvvmmoviws.movies.data.api.MovieDbInterface
-import com.murad.mvvmmoviws.movies.data.repository.NetworkState
-import com.murad.mvvmmoviws.movies.data.repository.TrendingDataSource
-import com.murad.mvvmmoviws.movies.data.vo.Trending_Movies
+import com.murad.mvvmmoviws.data.api.MovieDbInterface
+import com.murad.mvvmmoviws.data.repository.NetworkState
+import com.murad.mvvmmoviws.data.repository.TrendingDataSource
+import com.murad.mvvmmoviws.data.vo.Trending_Movies
 
 class TrendingMoviesRepository(val apiService:MovieDbInterface) {
 

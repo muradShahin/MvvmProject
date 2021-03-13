@@ -1,10 +1,10 @@
 package com.murad.mvvmmoviws.movies.single_movie.trailers
 
 import androidx.lifecycle.LiveData
-import com.murad.mvvmmoviws.movies.data.api.MovieDbInterface
-import com.murad.mvvmmoviws.movies.data.repository.NetworkState
-import com.murad.mvvmmoviws.movies.data.repository.TrailersDataSource
-import com.murad.mvvmmoviws.movies.data.vo.Trailers
+import com.murad.mvvmmoviws.data.api.MovieDbInterface
+import com.murad.mvvmmoviws.data.repository.NetworkState
+import com.murad.mvvmmoviws.data.repository.TrailersDataSource
+import com.murad.mvvmmoviws.data.vo.Trailers
 
 class Repository_Trailers(val apiService:MovieDbInterface,val movie_id:Int) {
 
